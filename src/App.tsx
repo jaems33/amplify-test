@@ -31,10 +31,10 @@ const App: React.FunctionComponent<any> = () => {
       {url: './images/image3.jpg', text: name},
       {url: './images/image4.jpg', text: name},
     ]);
-  }, []);
+  }, [dispatch]);
 
   return (
-      <div className="App">
+      <div className="app">
         <Navigation />
         <Product product={product} images={images} />
       </div>

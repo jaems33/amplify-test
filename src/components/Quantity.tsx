@@ -32,8 +32,10 @@ const Quantity: React.FunctionComponent<any> = ({name, size}) => {
   }
 
   let buttonText;
+  let buttonClass = 'button--primary';
   if (itemInCart && (quantity === itemInCart.quantity)){
     buttonText = `${quantity} in Cart`
+    buttonClass = '';
   } else if (itemInCart && (quantity === 0)){
     buttonText = "Remove from Cart";
   } else if (itemInCart){
@@ -48,10 +50,10 @@ const Quantity: React.FunctionComponent<any> = ({name, size}) => {
   
   return(
     <form>
-      <Button text="-" callback={decreaseQty} />
+      <Button className="button--quantity" text="-" callback={decreaseQty} />
       <span className="inner_text">{quantity}</span>
-      <Button text="+" callback={increaseQty} />
-      <Button className="button--addToCart" text={buttonText} callback={modifyCart} />
+      <Button className="button--quantity" text="+" callback={increaseQty} />
+      <Button className={`button--addToCart ${buttonClass}`} text={buttonText} callback={modifyCart} />
     </form>
   )
 }

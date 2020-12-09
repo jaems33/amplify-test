@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navigation: React.FunctionComponent<any> = (props) => {
   return (<nav>
-    <h2>OrderDesk</h2>
+    <span className="h3">OrderDesk</span>
   </nav>)
 }
 

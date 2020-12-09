@@ -1,5 +1,30 @@
-.App {
-  text-align: center;
+/* Load Fonts */
+
+@font-face {
+  font-family: 'Padauk';
+  font-weight: 500;
+  src: local('OpenSans'), url(./fonts/Padauk/Padauk-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Padauk';
+  font-weight: 700;
+  src: local('OpenSans'), url(./fonts/Padauk/Padauk-Bold.ttf) format('truetype');
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e8e8e8;
+}
+
+.button, body {
+  font-family: 'Padauk', Arial, Helvetica, sans-serif;
+}
+
+.page {
+  padding: 16px;
 }
 
 .App-logo {
@@ -7,86 +32,177 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .img--hide {
   display: none;
+}
+
+nav {
+  background-color: #e6e6e6;
+  padding: 16px 16px 8px 16px;
+  text-align: center;
+}
+
+/* Typography */
+
+.h1 {
+  font-size: 48px;
+  display: block;
+}
+
+.h2 {
+  font-size: 36px;
+  display: block;
+}
+
+.h3 {
+  font-size: 24px;
+  display: block;
+}
+
+.h4 {
+  font-size: 16px;
+  display: block;
+}
+
+.spacing--s {
+  margin-bottom: 8px;
+}
+
+.spacing--m {
+  margin-bottom: 16px;
+}
+
+.spacing--l {
+  margin-bottom: 32px;
+}
+
+p, li {
+  font-size: 16px;
+}
+
+.bordered {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 16px;
+}
+
+.inner_text {
+  font-size: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 80px;
+  text-align: center;
 }
 
 .button {
   border-radius: 4px;
   background-color: #e6e6e6;
   border: 0;
-  padding: 20px;
   color: #0f0f0f;
+  box-sizing: border-box;
   &:hover {
     cursor: pointer;
+
   }
   &:focus {
     outline: 0;
   }
-  box-sizing: border-box;
 }
 
-.inner_text {
-  margin: 0 20px;
-  font-size: 18px;
+.buttonlist {
+  .button {
+    margin-right: 8px;
+  }
 }
 
 
-.square {
-  width: 120px;
-  height: 120px;
-  overflow: hidden;
-}
-
-.button--image {
+.button--outline {
+  border: 1px solid #cfd3ce;
+  background-color: #FFF;
+  color: #000;
   &.selected {
-    border: 1px solid #000;
+    background-color: #e6e6e6;
+    border: 1px solid #cfd3ce;
   }
 }
 
-.imgContainer {
-  max-width: 400px;
-  img {
-    width: 100%;
-
-  }
+.button--standard {
+  font-size: 16px;
+  padding: 8px 32px;
 }
 
-.carousel-image {
-  height: 200px;
+.button--quantity {
+  font-size: 16px;
+  padding: 8px 32px;
 }
 
 .button--addToCart {
   min-width: 200px;
   margin-left: 20px;
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.button--primary {
+  background-color: #0e49b5;
+  color: #FFF;
+  &:hover {
+    background-color: #153e90;
+  }
+}
+
+.imgContainer {
+  overflow: hidden;
+  vertical-align: top;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.carousel {
+}
+
+.carousel__image {
+  height: 400px;
+}
+
+.carousel__thumbnails {
+  display: flex;
+}
+
+.carousel__thumbnails .button {
+  flex: 1 1 0px;
+  padding: 8px;
+  margin: 16px 32px 0px 32px;
+  border: 2px solid #cfd3ce;
+  background-color: #FFF;
+  &:hover {
+    border: 2px solid #839b97;
+  }
+  &.selected {
+    background-color: #cfd3ce;
+    border: 2px solid #cfd3ce;
+  }
+}
+
+
+
+
+
+.grid {
+  max-width: 800px;
+  margin: auto;
+}
+
+.grid__element {
+  flex: 1 1 1;
+  flex-grow: 1;
+}
+
+.grid__content {
+  background-color: #FFF;
+  padding: 16px;
+  margin-bottom: 16px;
 }

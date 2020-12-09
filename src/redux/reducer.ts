@@ -1,21 +1,5 @@
 import * as actions from './actionTypes';
 
-interface Action {
-  type: string;
-  payload: {
-    name: string,
-    size: string,
-    quantity: number,
-    product: any
-  }
-}
-
-interface State {
-  cart: {
-    items: Array<any>
-  }
-}
-
 const defaultState = {
   cart: [],
   product: {

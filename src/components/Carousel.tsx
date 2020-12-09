@@ -12,16 +12,17 @@ const Carousel: React.FunctionComponent<any> = (props) => {
   
   if (props.images.length === 0) return (<></>);
   return (
-    <div>
-      <div className="carousel-image">
+    <div className="carousel">
+      <div className="carousel__image">
         <Image imgUrl={props.images[selectedIndex].url} altText={props.images[selectedIndex].text} />
       </div>
+      <div className="carousel__thumbnails">
       {
         props.images.length > 1 ?
           props.images.map( (element: any, index: number) => {
             return <ImageButton
               key={index}
-              className={index === selectedIndex ? "selected square" : "square"} 
+              className={index === selectedIndex ? "selected" : ""} 
               imgUrl={element.url} 
               altText={element.text} 
               callback={() => onClick(index)}  
@@ -29,6 +30,7 @@ const Carousel: React.FunctionComponent<any> = (props) => {
           })
         : <></>
       }
+      </div>
     </div>
   );
 }
