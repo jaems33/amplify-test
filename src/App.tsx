@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Product from './pages/Product';
 import Navigation from './pages/Navigation';
 import './App.scss';
+// @ts-ignore
 import { useSelector, useDispatch } from 'react-redux';
 import { addProduct } from './redux/actions';
 
