@@ -42,9 +42,9 @@ const Quantity: React.FunctionComponent<any> = ({name, size}) => {
     buttonText = "Add to Cart";
   }
 
-  // useEffect(() => {
-  //   setQuantity(itemInCart ? itemInCart.quantity : 1);
-  // }, [itemInCart])
+  useEffect(() => {
+    setQuantity(itemInCart ? itemInCart.quantity : 1);
+  }, [itemInCart])
   
   return(
     <form>

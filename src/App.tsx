@@ -13,6 +13,7 @@ const App: React.FunctionComponent<any> = () => {
 
   // After component loads, populate store
   useEffect (() => {
+
     const defaultProduct = {
       imageUrl:'https://www.linkpicture.com/q/LPic5f7f90d59df81380277299.jpg',
       name: 'White Brick',
@@ -24,14 +25,13 @@ const App: React.FunctionComponent<any> = () => {
 
     const name = defaultProduct.name;
     setImages([
-      {url: defaultProduct.imageUrl, altText: defaultProduct.name},
-      {url: './images/image1.jpg', altText: name},
-      {url: './images/image2.jpg', altText: name},
-      {url: './images/image3.jpg', altText: name},
-      {url: './images/image4.jpg', altText: name},
+      {url: defaultProduct.imageUrl, text: defaultProduct.name},
+      {url: './images/image1.jpg', text: name},
+      {url: './images/image2.jpg', text: name},
+      {url: './images/image3.jpg', text: name},
+      {url: './images/image4.jpg', text: name},
     ]);
   }, []);
-
 
   return (
       <div className="App">

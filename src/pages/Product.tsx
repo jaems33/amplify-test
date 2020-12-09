@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import Quantity from '../components/Quantity';
 import MultipleOptions from '../components/MultipleOptions';
 import Review from '../components/Review';
@@ -16,18 +15,21 @@ const Product: React.FunctionComponent<any> = (props) => {
   }
   const [selectedSize, setSelectedSize] = useState('');
   
-  /* When size is loaded, update the selected size */
+  // When size is loaded, update the selected size
   useEffect( () => {
     if (size[0]){
       setSelectedSize(size[0]);
     }
   }, [size]);
 
+  if (props.name === '') {
+    return <></>
+  }
+
   return (<section>
     <Carousel images={props.images} />
     <h1>{name}</h1>
     <h3>Manufacturer: {manufacturer}</h3>
-    
     <Quantity name={name} size={selectedSize} />
     <Price name={name} size={selectedSize} price={price} />
     <div>

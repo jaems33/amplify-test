@@ -11,7 +11,6 @@ const Carousel: React.FunctionComponent<any> = (props) => {
   }
   
   if (props.images.length === 0) return (<></>);
-
   return (
     <div>
       <div className="carousel-image">
